@@ -1,0 +1,27 @@
+<div class="container">
+  <form class="py-5 w-75 m-auto" [formGroup]='loginForm'>
+    <h2 class="my-3 bg-secondary d-inline-block rounded p-2">Login Form</h2>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input formControlName="email" type="text" id="fName" class="form-control"
+        [class.is-valid]="loginForm.get('email').errors == null && loginForm.get('email').touched">
+      <p *ngIf="loginForm.get('email').errors != null && loginForm.get('email').touched" class="text-danger py-2">E-mail
+        inValid</p>
+    </div><!-- emailInput -->
+
+    <div class="form-group">
+      <label for="pass">Password</label>
+      <input formControlName="password" type="password" id="fName" class="form-control" placeholder="start with capital letter"
+        [class.is-valid]="loginForm.get('password').errors == null && loginForm.get('password').touched">
+      <p *ngIf="loginForm.get('password').errors != null && loginForm.get('password').touched" class="text-danger py-2">
+        Password inValid</p>
+    </div><!-- passwordInput -->
+
+    <div *ngIf="flag" class="alert-danger p-2 text-center my-4 rounded"> {{errorMessage}} </div>
+
+    <button [disabled]='loginForm.invalid' (click)='getLoginInfo(loginForm)' type="submit"
+      class="btn btn-info">Login</button>
+
+  </form>
+</div><!-- container -->

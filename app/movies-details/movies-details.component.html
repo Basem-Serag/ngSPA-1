@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div class="row my-5">
+    <div class="col-md-4">
+      <div class="img_poster">
+        <img [src]="imgPrefix+mediaDetails?.poster_path" alt="image_poster" class="img-fluid rounded shadow">
+      </div>
+    </div><!-- img-col -->
+
+
+    <div class="col-md-8">
+      <div class="details">
+        <h2 class="my-2">{{mediaDetails?.title}}{{mediaDetails?.name}}</h2>
+        <p class="lead text-muted my-2">{{mediaDetails?.tagline}}</p>
+        <span class="mx-2 rounded p-2 bg-info d-inline-block my-2"
+          *ngFor="let gener of mediaDetails?.genres">{{gener.name}}</span>
+
+        <ul class="list-unstyled my-2">
+          <li class="my-4">Vote : {{mediaDetails.vote_average}}</li>
+          <li class="my-4">Vote count : {{mediaDetails.vote_count}}</li>
+          <li class="my-4">popularity : {{mediaDetails.popularity}}</li>
+          <li class="my-4">release_date : {{mediaDetails.release_date}}</li>
+        </ul>
+        <p class="lead text-muted">{{mediaDetails.overview}}</p>
+      </div>
+    </div><!-- details-col -->
+
+  </div><!-- row -->
+
+</div><!-- container -->

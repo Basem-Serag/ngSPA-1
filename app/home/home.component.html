@@ -1,0 +1,50 @@
+<section>
+  <div class="container">
+    <div class="row my-4">
+      <div class="col-md-4">
+        <h2 class="my-5">
+
+          <span class="title-border w-25 d-block my-3"></span>
+          Trending <br>
+          Movies <br>
+          To Watch Now
+          <span class="title-border w-75 d-block my-3"></span>
+
+        </h2>
+      </div><!-- col title -->
+
+      <div *ngFor="let movie of trendingMovies" class="col-md-2 position-relative animate">
+        <div [routerLink]="['/movieDetails' , movie.media_type , movie.id ]" class="movie-box my-3">
+          <img [src]="imgPrefix+movie.poster_path" class="w-100 rounded shadow" alt="">
+          <h3 class="h6 my-2">{{movie.title}}</h3>
+
+          <div class="vote">{{movie.vote_average}}</div>
+        </div><!-- movie-box -->
+      </div><!-- movie-col -->
+    </div><!-- movies-row -->
+
+    <div class="row my-4">
+      <div class="col-md-4">
+        <h2 class="my-5">
+
+          <span class="title-border w-25 d-block my-3"></span>
+          Trending <br>
+          Tv Show<br>
+          To Watch Now
+          <span class="title-border w-75 d-block my-3"></span>
+
+        </h2>
+      </div><!-- col title -->
+
+      <div *ngFor="let tv of trendingTv" class="col-md-2 position-relative animate">
+        <div [routerLink]="['/movieDetails' , tv.media_type , tv.id ]" class="tv-box my-3">
+          <img [src]="imgPrefix+tv.poster_path" class="w-100 rounded shadow" alt="">
+          <h3 class="h6 my-2">{{tv.name}}</h3>
+
+          <div class="vote">{{tv.vote_average}}</div>
+        </div><!-- tv-box -->
+      </div><!-- tv-col -->
+    </div><!-- tv-row -->
+  </div><!-- container -->
+
+</section>

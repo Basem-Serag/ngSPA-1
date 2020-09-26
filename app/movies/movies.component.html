@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="row my-5">
+    <div *ngFor="let movie of allMovies" class="col-md-3 position-relative animate">
+      <div class="movie my-3">
+        <img [src]="imgPrefix+movie?.poster_path" class="img-fluid rounded shadow" alt="movies poster">
+        <h2 class="h6 my-2">{{movie?.title}}</h2>
+        <p class="text-muted">{{movie.release_date}}</p>
+        <div class="vote">{{movie?.vote_average}}</div>
+
+      </div>
+    </div><!-- col -->
+  </div><!-- row -->
+  
+</div><!-- container -->

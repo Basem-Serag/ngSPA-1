@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
+
+$bgColor: #131722;
+$lightBgColor: #24baef;
+$bgTransparent: rgba(36, 186, 239, 0.6);
+$fontColor: #fff;
+$borderColor: #a8a8a83d;
+$borderHeight: 1px;
+$secondFontColor: #949cb0;
+
+.title-border {
+    height: $borderHeight;
+    background-color: $borderColor;
+}
+
+.vote {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: $lightBgColor;
+    padding: 8px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+body {
+    background-color: $bgColor;
+    color: $fontColor;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+nav {
+    box-shadow: 0px 0px 8px $secondFontColor;
+    font-size: 1.1rem;
+    .navbar-brand {
+        width: 100px;
+    }
+    ul li a {
+        color: $fontColor;
+
+        &:hover {
+            color: $borderColor;
+            transition: color 0.5s linear;
+        }
+    }
+    .fab:hover {
+        color: $borderColor;
+        transition: color 0.5s linear;
+    }
+}
+
+.movie-box,
+.tv-box,
+.fab,
+.nav-link {
+    cursor: pointer;
+}
+
+.animate {
+    transition: all 0.5s linear;
+    &:hover {
+        transform: scale(1.1);
+    }
+}

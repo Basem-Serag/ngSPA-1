@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-2" *ngFor="let people of peoples">
+      <div class="people-box my-3">
+        <img [src]="imgPrefix+people.profile_path" class="img-fluid shadow rounded-pill" alt="scene">
+        <h2 class="h6 my-2 text-center">{{people.name}}</h2>
+      </div><!-- people-box -->
+    </div><!-- col -->
+  </div><!-- row -->
+</div><!-- container -->
